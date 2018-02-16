@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tres en ralla</title>
+	<link rel="stylesheet" href="style.css">
+
+	<script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+	  	
+	</script>
+</head>
+<body>
+
+	<h1>TRES EN RALLA</h1>
+	<div id="place-container"></div>
+	<script>
+		var click1 = "circulo";
+		var click2 = "X";
+		var nclicks = 1;
+		var placesList = ["carta", "carta", "carta","carta","carta","carta","carta","carta","carta"];
+
+		setPlaces();
+
+		function setPlaces(){
+			for (var i = 0; i < 9; i++){
+				if (i == 3) {
+					$("#place-container").append('<br class="br">');
+				}
+				else if (i == 6) {
+					$("#place-container").append('<br class="br">');
+				}
+
+				$("#place-container").append('<img class ="place found" src="' + placesList[i] + '.png" onclick="myClick(' + i + ')">');
+
+			}	
+		}
+
+		function myClick(index){
+			if (placesList[index] == "carta"){
+				console.log('place numero: ' + index);
+					if (nclicks == 1) {
+					placesList[index]=click1;
+					$("#place-container").html('');
+					setPlaces();
+					nclicks = 2;
+					}	
+
+					else {
+
+					placesList[index]=click2;
+					$("#place-container").html('');
+					setPlaces();
+					nclicks = 1;
+					}
+
+				}
+			}	
+	</script>
+	
+</body>
+</html>

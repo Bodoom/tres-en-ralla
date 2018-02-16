@@ -1,0 +1,21 @@
+.place {
+	width: 100px;
+	height: 100px;
+	border: solid;
+	color: green;
+
+}
+
+.found{
+	display: inline-block;
+}
+
+.br {
+	width: 0px;
+	height: 0px;
+	color: pink;
+}
+
+body {
+	align-content: center;
+}
